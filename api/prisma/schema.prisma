@@ -14,10 +14,10 @@ model Habit {
 }
 
 model HabitLog {
-  id        String   @id @default(cuid())
-  habitId   String
-  habit     Habit    @relation(fields: [habitId], references: [id], onDelete: Cascade)
-  date      String   // YYYY-MM-DD format
+  id      String @id @default(cuid())
+  habitId String
+  habit   Habit  @relation(fields: [habitId], references: [id], onDelete: Cascade)
+  date    String // YYYY-MM-DD format
 
   @@unique([habitId, date])
 }
